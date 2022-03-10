@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        #table {
+            border-collapse: separate;
+            border-spacing: 3em 0em;
+            text-align: center;
+        }
+        #btn{
+           background-color: blue;
+        }
+        #quocgia{
+            width: 130px;
+        }
+        #tiente{
+            width: 110px;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+    <table id="table">
+        <tr id="bt">
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="Amount" ></td>
+            <td>
+                <select type="number" id="quocgia" >
+                    <option name="Việt Nam">Việt Nam</option>
+                    <option name="England">England</option>
+                    <option name="America">America</option>
+                    <option name="Europe">Europe</option>
+                </select>
+            </td>
+            <td>
+                <select type="number" id="tiente" >
+                    <option name="VND">VND</option>
+                    <option name="Pound">Pound</option>
+                    <option name="USD">USD</option>
+                    <option name="Euro">Euro</option>
+                </select>
+            </td>
+            <td><button type="button" id="btn" name="convert" value="convert" style="color: white" onclick="chuyenDoi()">Convert</button></td>
+        </tr>
+
+    </table>
+</form>
+<p id="p1"></p>
+</body>
+</html>
+<script>
+    function chuyenDoi(){
+        let amount = document.getElementById('Amount').value;
+        let fromCC = document.getElementById('quocgia').value;
+        let toCC = document.getElementById('tiente').value;
+
+        let display = document.getElementById('p1');
+        let amountValue = parseFloat(amount)
+        switch (fromCC + '-' + toCC) {
+            case 'Việt Nam-VND':
+                amountValue = (amountValue * 1).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} VND`;
+                break;
+            case 'America-USD':
+                amountValue = (amountValue * 1).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} USD`;
+                break;
+            case 'England-Pound':
+                amountValue = (amountValue * 1).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} GBP`;
+                break;
+            case 'Europe-Euro':
+                amountValue = (amountValue * 1).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} EUR`;
+                break;
+            case 'Việt Nam-USD':
+                amountValue = (amountValue * 0.000044).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} USD`;
+                break;
+            case 'America-VND':
+                amountValue = (amountValue * 22645).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} VND`;
+                break;
+            case 'Việt Nam-Pound':
+                amountValue = (amountValue * 0.000032).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} GBP`;
+                break;
+            case 'England-VND':
+                amountValue = (amountValue * 30845).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} VND`;
+                break;
+            case 'Việt Nam-Euro':
+                amountValue = (amountValue * 0.000039).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} EUR`;
+                break;
+            case 'Europe-VND':
+                amountValue = (amountValue * 25620.55).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} VND`;
+                break;
+            case 'America-Pound':
+                amountValue = (amountValue * 0.73).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} GBP`;
+                break;
+            case 'America-Euro':
+                amountValue = (amountValue * 0.88).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} EUR`;
+                break;
+            case 'England-USD':
+                amountValue = (amountValue * 1.36).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} USD`;
+                break;
+            case 'England-Euro':
+                amountValue = (amountValue * 1.20).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} EUR`;
+                break;
+            case 'Europe-USD':
+                amountValue = (amountValue * 1.13).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} USD`;
+                break;
+            case 'Europe-Pound':
+                amountValue = (amountValue * 0.83).toLocaleString();
+                display.innerHTML = `Result: ${amountValue} GBP`;
+
+        }
+    }
+
+</script>
